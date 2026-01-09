@@ -1,0 +1,1 @@
+this I cloned from somewhere, it was basically a on camera screen very simple project with no platform and all, I improved its logic and enhaced it's user interace. I will describe the exact changes and implementations by me as soon as I get the time
