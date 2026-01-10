@@ -1,139 +1,134 @@
+/* ASL Translator - Global Styles */
+
+/* Modern Font Import */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+/* CSS Custom Properties - Theme Colors */
+:root {
+  --color-bg: #FAFAF8;
+  --color-surface: #F5F3EF;
+  --color-card: #FFFFFF;
+  --color-text-primary: #2D2D2D;
+  --color-text-secondary: #6B6B6B;
+  --color-text-muted: #9CA3AF;
+  --color-accent: #E07A5F;
+  --color-accent-hover: #C96249;
+  --color-success: #81B29A;
+  --color-warning: #F2CC8F;
+  --color-border: #E8E6E1;
+  --color-border-light: #F0EFEA;
+}
+
 html,
 body {
   padding: 0;
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen,
+    Ubuntu, Cantarell, 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+  background-color: var(--color-bg);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 a {
-  color: inherit;
+  color: var(--color-accent);
   text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover {
+  color: var(--color-accent-hover);
 }
 
 * {
   box-sizing: border-box;
 }
 
-.pabrik-tablist {
-  overflow: scroll;
+/* Smooth Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
 }
 
-.pabrik-tablist::-webkit-scrollbar {
-  display: none;
+::-webkit-scrollbar-track {
+  background: var(--color-surface);
+  border-radius: 4px;
 }
 
+::-webkit-scrollbar-thumb {
+  background: var(--color-border);
+  border-radius: 4px;
+  transition: background 0.2s ease;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-text-muted);
+}
+
+/* Image Optimization */
 img {
   max-width: 100%;
+  height: auto;
 }
 
-.boops {
-  display: block;
-  overflow: hidden;
-  position: fixed;
-  top: 0;
-  z-index: 9;
-  height: 100%;
-  width: 100%;
-  object-fit: cover;
-}
-
+/* Webcam Styles */
 #webcam {
   position: fixed;
   height: 100%;
   width: 100%;
   object-fit: cover;
   transform: scaleX(-1);
-  filter: FlipH;
 }
 
 #gesture-canvas {
   position: fixed;
-  /* top:0;
-  left:0;
-  right: 0;
-  bottom: 0; */
   height: 100%;
   width: 100%;
   object-fit: cover;
   transform: scaleX(-1);
-  filter: FlipH;
   z-index: 9;
 }
 
-.pose-data {
-  font-size: 10px;
+/* Focus States for Accessibility */
+button:focus-visible,
+a:focus-visible {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 2px;
 }
 
-#webcam-container {
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  width: 100%;
-  height: 100%;
-  /* background: royalblue; */
+/* Selection Highlight */
+::selection {
+  background-color: var(--color-accent);
+  color: white;
 }
 
-#app-title {
-  /* position: absolute; */
-  /* top:0;
-  left:0;
-  right: 0;
-  bottom: 0; */
-  z-index: 5;
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.tutor-text {
-  z-index: 5;
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.6;
+  }
 }
 
-#start-button {
-  width: 400px;
-  /* background-color: black;*/
-  /* color: white; */
-  /* font-size: 16px; */
-  border-radius: 30px;
-  border: none;
-  padding: 15px 20px;
-  text-align: center;
-  /* box-shadow: 0 5px 10px 0 rgba(0,0,0,0.2); */
-  position: fixed;
-  bottom: 30px;
-  left: calc(50% - 150px);
-  z-index: 10;
+/* Utility Classes */
+.fade-in {
+  animation: fadeIn 0.3s ease-out;
 }
 
-#emojimage {
-  /* position: fixed; */
-  top: 60px;
-  left: calc(50% - 50px);
-  border-style: none;
-}
-
-#emojimage.play {
-  /* position: fixed; */
-  z-index: 10;
-}
-
-#emojis {
-  /* display: grid;
-  grid-template-columns: repeat(9, 1fr);
-  height: 50px; */
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  text-align: -webkit-center;
-}
-
-#emojis img {
-  opacity: 0.5;
-  transition: opacity 200ms linear;
-}
-
-#emojis img.found {
-  opacity: 1;
+.pulse {
+  animation: pulse 2s ease-in-out infinite;
 }

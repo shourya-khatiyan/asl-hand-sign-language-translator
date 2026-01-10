@@ -1,9 +1,8 @@
 {
-  "name": "handsign-alphabet",
+  "name": "asl-hand-sign-translator",
   "private": true,
-  "description": "A simple ASL (American Sign Language) alphabet detection using TensorFlow and Handpose model",
-  "version": "0.1.0",
-  "author": "Syauqy <syauqyaziz@gmail.com>",
+  "description": "Real-time ASL (American Sign Language) alphabet translator using TensorFlow and Handpose model",
+  "version": "1.0.0",
   "dependencies": {
     "@chakra-ui/gatsby-plugin": "^1.0.0",
     "@chakra-ui/react": "^1.0.4",
@@ -25,17 +24,17 @@
   "devDependencies": {
     "prettier": "2.1.2"
   },
-  "keywords": [
-    "gatsby"
-  ],
-  "license": "0BSD",
+  "license": "BSD-2-Clause",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/syauqy/handsign-tensorflow-gatsby"
-  }
+  "keywords": [
+    "asl",
+    "sign-language",
+    "tensorflow",
+    "handpose",
+    "accessibility"
+  ]
 }

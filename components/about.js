@@ -12,7 +12,6 @@ import {
   ModalBody,
   ModalCloseButton,
   useDisclosure,
-  Link,
 } from "@chakra-ui/react"
 
 export default function About() {
@@ -34,12 +33,9 @@ export default function About() {
               American Sign Language (ASL) is a visual language that serves as
               the predominant sign language of Deaf communities in the United
               States and most of Canada.<br></br>
-              Here's the list of ASL hand gestures for alphabet.
+              Here's the list of ASL hand gestures for the alphabet.
             </Text>
-            <Image src={handImages} />
-            <Text fontSize="sm">
-              This sign language illustration is created by{"shourya"}
-            </Text>
+            <Image src={handImages} alt="ASL Alphabet Reference" />
           </ModalBody>
           <ModalFooter>
             <Button onClick={onClose}>Close</Button>
