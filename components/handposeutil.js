@@ -37,7 +37,7 @@ export const drawHand = (prediction, ctx) => {
                         landmarks[secondJointIndex][1]
                     );
                     ctx.strokeStyle = STROKE_COLOR;
-                    ctx.lineWidth = 3;
+                    ctx.lineWidth = 1;
                     ctx.stroke();
                 }
             }
@@ -60,7 +60,7 @@ export const drawHand = (prediction, ctx) => {
 
                 //add subtle border
                 ctx.strokeStyle = STROKE_COLOR;
-                ctx.lineWidth = 2;
+                ctx.lineWidth = 1;
                 ctx.stroke();
             }
         })
